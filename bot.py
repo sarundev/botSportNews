@@ -17,10 +17,7 @@ load_dotenv(BASE_DIR / ".env")
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 ADMIN_IDS = {int(x) for x in os.getenv("ADMIN_IDS", "").replace(" ", "").split(",") if x}
 BOT_TITLE = os.getenv("BOT_TITLE", "SB24 – ព័ត៌មានកីឡា")
-# នៅលើ Railway កំណត់ DATA_DIR=/data (Volume) ដើម្បីកុំឱ្យទិន្នន័យបាត់ពេល redeploy
-DATA_DIR = Path(os.getenv("DATA_DIR") or BASE_DIR)
-DATA_DIR.mkdir(parents=True, exist_ok=True)
-DATA_FILE = DATA_DIR / "data.json"
+DATA_FILE = BASE_DIR / "data.json"
 
 logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=logging.INFO)
 logging.getLogger("httpx").setLevel(logging.WARNING)
