@@ -1,0 +1,10 @@
+# secrets — never commit your bot token
+.env
+
+# bot data and logs
+data.json
+*.log
+
+__pycache__/
+*.pyc
+.DS_Store
